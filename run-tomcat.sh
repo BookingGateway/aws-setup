@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -uvx
 set -e
-sudo systemctl start tomcat10
-systemctl status tomcat10
+sudo systemctl start tomcat9
+systemctl status tomcat9
 

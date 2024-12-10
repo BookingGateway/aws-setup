@@ -7,6 +7,7 @@
     }catch (Exception e) {
         e.printStackTrace();
     }
+    if (hostname.equals("ip-172-31-11-93.ap-northeast-1.compute.internal")) hostname += " (EC1)";
+    if (hostname.equals("ip-172-31-37-60.ap-northeast-1.compute.internal")) hostname += " (EC2)";
   %>
-  <p>hostname: <%= hostname %></p>
-
+  <h1>hostname: <%= hostname %></h1>

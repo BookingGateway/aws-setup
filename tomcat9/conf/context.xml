@@ -9,9 +9,9 @@
       maxActiveSessions="-1"
      >
         <Store className="org.apache.catalina.session.JDBCStore"  
-         connectionURL="jdbc:mysql://localhost:3306/bg?useSSL=false&amp;characterEncoding=UTF-8"
-         connectionName="root"
-         connectionPassword=""                          
+         connectionURL="jdbc:mysql://database-2.chg4oqauqbrq.ap-northeast-1.rds.amazonaws.com:3306/bg?useSSL=false&amp;characterEncoding=UTF-8"
+         connectionName="admin"
+         connectionPassword="bookinggateway2025"                          
          driverName="org.gjt.mm.mysql.Driver"
          sessionTable="tomcat_sessions"                 
          sessionIdCol="session_id"                      

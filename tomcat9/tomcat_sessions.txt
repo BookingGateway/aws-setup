@@ -1,0 +1,14 @@
+CREATE TABLE `tomcat_sessions` (
+  `session_id`            VARCHAR(100)    NOT NULL COMMENT 'セッションID',
+  `session_valid`         CHAR(1)         NOT NULL COMMENT 'スワップアウトした際に有効にするか',
+  `session_max_inactive`  INT             NOT NULL COMMENT '最大無応答間隔',
+  `session_last_accessed` BIGINT          NOT NULL COMMENT '最終アクセス時間',
+  `session_app`           VARCHAR(255)    DEFAULT NULL COMMENT 'アプリケーション名',
+  `session_data`          MEDIUMBLOB COMMENT 'セッションデータ',
+  PRIMARY KEY (`session_id`),
+  KEY kapp_name (`session_app`)
+)
+COMMENT='セッション'
+COLLATE='utf8_general_ci'
+ENGINE=InnoDB
+;

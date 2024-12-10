@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <Manager className="org.apache.catalina.session.PersistentManager"
+      saveOnRestart="true"
+      maxIdleBackup="0"
+      maxIdleSwap="0"
+      minIdleSwap="10"
+      processExpiresFrequency="1"
+      maxActiveSessions="-1"
+     >
+        <Store className="org.apache.catalina.session.JDBCStore"  
+         connectionURL="jdbc:mysql://localhost:3306/bg?useSSL=false&amp;characterEncoding=UTF-8"
+         connectionName="root"
+         connectionPassword=""                          
+         driverName="org.gjt.mm.mysql.Driver"
+         sessionTable="tomcat_sessions"                 
+         sessionIdCol="session_id"                      
+         sessionValidCol="session_valid"                
+         sessionMaxInactiveCol="session_max_inactive"   
+         sessionLastAccessedCol="session_last_accessed" 
+         sessionAppCol="session_app"                    
+         sessionDataCol="session_data"                  
+      />
+    </Manager>
+</Context>

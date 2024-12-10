@@ -1,0 +1,20 @@
+名前2 is {{ name }}.<br>
+{% if prevPageNo > 0 %}
+<a href="/MyDate?page={{ prevPageNo }}">前へ</a>
+{% else %}
+前へ
+{% endif %}
+<a href="/MyDate?page={{ nextPageNo }}">次へ</a>
+<br>
+<table border="1">
+  <tr><th>offset</th><th>タイトル</th></tr>
+{% for r in queryResult %}
+    <tr><td>{{ r.offset }}</td><td>{{ r.title }}</td></tr>
+{% endfor %}
+</table>
+
+<br>
+
+{% autoescape false %}
+	<a href="/MyDate?page={{ nextPageNo }}">次へ</a>
+{% endautoescape %}

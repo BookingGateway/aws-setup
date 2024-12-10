@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+
+<body>
+
+
+  <h4>JSONの送信</h4>
+  <form name="form1" method="POST" action="http:/localhost:7777/LastEpoch">
+
+    <div>
+      <label for="textarea1">JSON入力</label>
+      <textarea id="textarea1" rows="30" cols="100" placeholder="JSONを入力してください。" name="inputdata"></textarea>
+    </div>
+
+    <input type="button" value="送信" onClick="clickPost();">
+
+    <input type="reset" value="リセット" role="button" onClick="return clearFormAll()">
+
+  </form>
+
+
+  <script>
+    function clickPost() {
+
+      var url = location.href;  // 送信先URL
+      var data = document.getElementById("textarea1").value; // POSTデータ
+
+      $.ajax({
+        url: url.replace('testinput', 'output'),
+        //url: 'http://localhost:8080/testoutput',
+        type: 'POST',
+        //contentType: 'application/json',
+        dateType:"json",
+        timeout: 60000,
+        data: data
+      })
+        //Ajax通信成功の場合
+        .done(function (response, status, xhr) {
+          //alert('success');
+          console.log("status = " + status);
+          console.log("xhr.status = " + xhr.status);
+          window.location.href=response;
+        })
+        //Ajax通信失敗の場合
+        .fail(function () {
+          //alert('fail');
+        })
+        //Ajax通信の成功・失敗に関わらず最後に処理
+        .always(function () {
+          //alert('end');
+        });
+    }
+  </script>
+
+</body>
+
+</html>
